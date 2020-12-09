@@ -4,12 +4,13 @@
  * @version 1.0.0
 */
 /*
-Plugin Name: Power BI Code Formatter
-Plugin URI: http://wordpress.org/plugins/powerbiformatter/
-Description: Use a simple shortcode to format your code (all attributes are optional): [mcode theme=dark lineWidth=90 width=600px ]let a = 1 in a[/mcode]  [daxcode width=600px region=EU ]EVALUATE myTable[/daxcode]
+Plugin Name: Code Formatter for PowerBI
+Plugin URI: http://wordpress.org/plugins/code-formatter-for-powerbi/
+Description: Use simple shortcodes to format your DAX and M code (all attributes are optional): [mcode theme=dark lineWidth=90 width=600px ]let a = 1 in a[/mcode]  [daxcode width=600px region=EU ]EVALUATE myTable[/daxcode]
 Author: mogular GmbH
 Version: 1.0.0
 Author URI: https://durchblick-durch-daten.de
+Github Repo: https://github.com/mogular/wp-powerbicodeformatter
 */
 
 	function formatM($atts, $content = null, $tag = null) {
