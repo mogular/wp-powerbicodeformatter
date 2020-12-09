@@ -4,4 +4,4 @@ WordPress plugin for DAX and M code
 
 Powered by:
 - www.daxformatter.com
-- www.powerquerformatter.com
+- www.powerqueryformatter.com
