@@ -1,0 +1,12 @@
+
+/* powerbi code formatter styles */
+
+pre.mcode-error {
+	color: red;
+}
+
+pre.daxcode-error {
+	color: red;
+}
+
+/* /powerbi code formatter styles */
