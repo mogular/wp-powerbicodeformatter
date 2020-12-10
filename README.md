@@ -4,7 +4,7 @@
 
 ###For M code (PowerQuery)
 ```
-[mcode theme=dark lineWidth=90 width=600px ]let a = 1 in a[/mcode]
+[mcode theme=dark linewidth=90 width=600px ]let a = 1 in a[/mcode]
 ```
 
 ###For DAX code (PowerBI, PowerPivot)

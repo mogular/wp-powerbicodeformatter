@@ -16,7 +16,7 @@ WordPress plugin for formatting and beautifying of DAX and M code
 (as used in PowerQuery, PowerBI and Excel PowerPivot)
 
 = M code (PowerQuery) =
-``[mcode theme=dark lineWidth=90 width=600px ]let a = 1 in a[/mcode]
+``[mcode theme=dark linewidth=90 width=600px ]let a = 1 in a[/mcode]
 
 = DAX code (PowerBI, PowerPivot) =
 ``[daxcode width=600px region=US]EVALUATE myTable[/daxcode]

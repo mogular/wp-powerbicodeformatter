@@ -13,20 +13,21 @@ Author URI: https://durchblick-durch-daten.de
 Github Repo: https://github.com/mogular/wp-powerbicodeformatter
 */
 
-	function formatM($atts, $content = null, $tag = null) {
-		return getCachedOrFromServiceM($content, $atts);
+	function cfpbi_formatM($atts, $content = null, $tag = null) {
+		return cfpbi_getCachedOrFromServiceM($content, $atts);
 	}
 
-	function formatDAX($atts, $content = null, $tag = null) {
-		return getCachedOrFromServiceDAX($content, $atts);
+	function cfpbi_formatDAX($atts, $content = null, $tag = null) {
+		return cfpbi_getCachedOrFromServiceDAX($content, $atts);
 	}
 	
-	function add_mformatter_stylesheet() {
-		wp_register_style('mformatterstylesheet', '/wp-content/plugins/mformatter/mformatter.css');
-		wp_enqueue_style('mformatterstylesheet');
+	function cfpbi_addStylesheet() {
+		$cssPath = plugins_url( 'pbiformatter.css', __FILE__ );
+		wp_register_style('pbiformatterstylesheet', $cssPath);
+		wp_enqueue_style('pbiformatterstylesheet');
 	}
 	
-	function getCachedOrFromServiceDAX($daxcode, $atts = array())  {
+	function cfpbi_getCachedOrFromServiceDAX($daxcode, $atts = array())  {
 		$region = isset($atts['region']) ? $atts['region'] : 'US';
 		$cacheKey = 'daxcode#' . md5($daxcode) . '#' . $region;
 		$cached = get_transient($cacheKey);
@@ -59,10 +60,10 @@ Github Repo: https://github.com/mogular/wp-powerbicodeformatter
 		}
 	}
 	
-	function getCachedOrFromServiceM($mcode, $atts = array())  {
+	function cfpbi_getCachedOrFromServiceM($mcode, $atts = array())  {
 
 		$theme = isset($atts['theme']) ? $atts['theme'] : 'light';
-		$lineWidth = isset($atts['lineWidth']) ? $atts['lineWidth'] : 100;
+		$lineWidth = isset($atts['linewidth']) ? $atts['linewidth'] : '100';
 		$cacheKey = 'mcode#' . md5($mcode) . '#' . $theme . $lineWidth;
 		$cached = get_transient($cacheKey);
 		$cacheDuration = 30 * 86400; // 1 month
@@ -92,17 +93,17 @@ Github Repo: https://github.com/mogular/wp-powerbicodeformatter
 		}
 	}
 	
- 	function wpdocs_add_custom_shortcode() {
-		add_shortcode('mcode', 'formatM');
-		add_shortcode('daxcode', 'formatDAX');
+ 	function cfpbi_addShortcodes() {
+		add_shortcode('mcode', 'cfpbi_formatM');
+		add_shortcode('daxcode', 'cfpbi_formatDAX');
 	}
 
-	function shortcodes_to_exempt_from_wptexturize( $shortcodes ) {
+	function cfpbi_exemptShortcodesWptexturize( $shortcodes ) {
     	$shortcodes[] = 'mcode';
 		$shortcodes[] = 'daxcode';
     	return $shortcodes;
 	}
 	
-	add_action( 'init', 'wpdocs_add_custom_shortcode' );
-	add_action( 'wp_print_styles', 'add_mformatter_stylesheet' );
-	add_filter( 'no_texturize_shortcodes', 'shortcodes_to_exempt_from_wptexturize' );
+	add_action( 'init', 'cfpbi_addShortcodes' );
+	add_action( 'wp_print_styles', 'cfpbi_addStylesheet' );
+	add_filter( 'no_texturize_shortcodes', 'cfpbi_exemptShortcodesWptexturize' );
