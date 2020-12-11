@@ -23,17 +23,25 @@ WordPress plugin for formatting and beautifying of DAX and M code
 
 All shortcode attributes are optional.
 
-For API documentations see:
-
-[PowerQueryFormatter](https://www.powerqueryformatter.com/api)
-
-[DAXFormatter](https://www.sqlbi.com/blog/marco/2014/02/24/how-to-pass-a-dax-query-to-dax-formatter/)
-
-
 The formatted results for unchanged code are cached (for 30 days) via WordPress transients.
 
-PowerBI is a registered trademark of Microsoft.
+The plugin uses the following free services to format the code:
 
+- [PowerQueryFormatter](https://www.powerqueryformatter.com)
+[Terms of use](https://www.powerqueryformatter.com/api)
+[API Documentation](https://www.powerqueryformatter.com/api)
+
+- [DAXFormatter](https://www.daxformatter.com)
+[Terms of use](https://www.daxformatter.com) (scroll down to "Terms of use")
+[API Documention](https://www.sqlbi.com/blog/marco/2014/02/24/how-to-pass-a-dax-query-to-dax-formatter/)
+
+By using the plugin (and therefore using the services of [DAXFormatter](https://www.daxformatter.com) and [PowerQueryFormatter](https://www.powerqueryformatter.com)) you agree to their terms of use (see links above).
+
+Power BI is a registered trademark of Microsoft Corp.
+
+== Frequently Asked Questions ==
+= I need a feature the plugin does not provide =
+This plugin is open source. Please provide a pull request or create an issue on the [github repository](https://github.com/mogular/wp-powerbicodeformatter).
 
 
 == Changelog == 
