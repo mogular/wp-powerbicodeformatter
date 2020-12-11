@@ -23,15 +23,14 @@ WordPress plugin for formatting and beautifying of DAX and M code
 
 All shortcode attributes are optional.
 
+The plugin formats your code, by sending it to the following free services and showing the result on your site.
 The formatted results for unchanged code are cached (for 30 days) via WordPress transients.
 
-The plugin uses the following free services to format the code:
-
-- [PowerQueryFormatter](https://www.powerqueryformatter.com)
+- M code is formatted by [PowerQueryFormatter](https://www.powerqueryformatter.com)
 [Terms of use](https://www.powerqueryformatter.com/api)
 [API Documentation](https://www.powerqueryformatter.com/api)
 
-- [DAXFormatter](https://www.daxformatter.com)
+- DAX code is formatted by [DAXFormatter](https://www.daxformatter.com)
 [Terms of use](https://www.daxformatter.com) (scroll down to "Terms of use")
 [API Documention](https://www.sqlbi.com/blog/marco/2014/02/24/how-to-pass-a-dax-query-to-dax-formatter/)
 
